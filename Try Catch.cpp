@@ -73,8 +73,20 @@ void task4() {
 //Если возраст меньше 0 или больше 150, сгенерируйте собственное исключение с информативным сообщением.
 //Затем используйте try и catch, чтобы обработать это исключение.
 
+	int age;
+	cout << "Enter You AGE ! ";
+	cin >> age;
 
-
+	if (age < 0) {
+		throw exception("БРЕД ВАШ возраст не млжет быть отрицательним !!!");
+	}
+	else if (age >= 150) {
+		throw exception("БРЕД ваш возраст не может быть болше 150 лет !!!");
+	}
+	else
+	{
+		cout << age << endl;
+	}
 
 }
 
@@ -88,11 +100,18 @@ void task5(){
 void main()
 {
 	setlocale(LC_ALL, "ru");
-	task1("test.txt");
+	//task1("test.txt");
 	/*cout<< task2("4");*/
 	
-
-
+	
+	try
+	{
+		task4();
+	}
+	catch (const std::exception&err)
+	{
+		cout << err.what() << endl;
+	}
 
 
 }
