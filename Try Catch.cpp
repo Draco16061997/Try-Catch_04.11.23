@@ -2,7 +2,7 @@
 #include <iostream>
 #include <fstream>
 #include<string>
-
+#include <vector>
 using namespace std;
 
 
@@ -91,11 +91,34 @@ void task4() {
 }
 
 
-void task5(){
-	//Работа с динамической памятью : Напишите программу, которая выделяет динамическую память с помощью оператора 
-	//new и затем в блоке try выполняет операции с этой памятью(например, чтение или запись), 
+
+	//Работа с динамической памятью : Напишите программу, которая выделяет динамическую память с помощью оператора new 
+	// и затем в блоке try выполняет операции с этой памятью(например, чтение или запись), 
 	//а затем в блоке catch обрабатывает исключение, если что - то пошло не так.
+
+void Task5(int num){
+	int size = 10;
+	int* dynamicArray = new int[size];
+	try
+	{
+		dynamicArray[0] = num;
+
+		cout << dynamicArray[0];
+	}
+	catch (const std::exception&err)
+	{
+		cout << err.what() << "чтото не так " << endl;
+	}
+	
+
+	
+
+	
+	
+	
+	
 }
+
 
 void main()
 {
@@ -103,16 +126,17 @@ void main()
 	//task1("test.txt");
 	/*cout<< task2("4");*/
 	
-	
-	try
-	{
-		task4();
-	}
-	catch (const std::exception&err)
-	{
-		cout << err.what() << endl;
-	}
+	//
+	//try
+	//{
+	//	task4();
+	//}
+	//catch (const std::exception&err)
+	//{
+	//	cout << err.what() << endl;
+	//}
 
+	Task5(3);
 
 }
 
